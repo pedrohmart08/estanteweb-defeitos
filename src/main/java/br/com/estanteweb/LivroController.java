@@ -36,7 +36,7 @@ public class LivroController {
 
     @GetMapping("/livros/novo")
     public String novo(HttpSession session, Model model) {
-        if (session.getAttribute("usuario") == null) {
+        if (session.getAttribute("usuarioLogado") == null) {
             return "redirect:/login";
         }
         return "livro-novo";
